@@ -25,7 +25,7 @@ public class BankBookDAO implements BookDAO {
 		st.setLong(1, bankBookDTO.getBooknum());
 		st.setString(2, bankBookDTO.getBookname());
 		st.setDouble(3, bankBookDTO.getBookrate());
-		st.setInt(4, 1);
+		st.setInt(4, bankBookDTO.getBooksale());
 		
 		//5. 최종 전송 후 결과처리
 		int result = st.executeUpdate();

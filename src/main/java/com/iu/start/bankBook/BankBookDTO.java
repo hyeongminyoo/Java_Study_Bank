@@ -19,7 +19,7 @@ public class BankBookDTO {
 
 
 
-	public void setBooknum(long booknum) {
+	public void setBooknum(Long booknum) {
 		this.booknum = booknum;
 	}
 
@@ -34,13 +34,13 @@ public class BankBookDTO {
 	public Double getBookrate() {
 		return bookrate;
 	}
-	public void setBookrate(double bookrate) {
+	public void setBookrate(Double bookrate) {
 		this.bookrate = bookrate;
 	}
 	public Integer getBooksale() {
 		return booksale;
 	}
-	public void setBooksale(int booksale) {
+	public void setBooksale(Integer booksale) {
 		this.booksale = booksale;
 	}
 }
