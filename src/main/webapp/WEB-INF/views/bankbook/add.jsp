@@ -12,11 +12,11 @@
 	<h3>Add page</h3>
 	<form action="add" method="POST">
 		
-		BookNum <input type="text" name="booknum" value=<%=ca.getTimeInMillis() %>><br>
 		BookName <input type="text" name="bookname"><br>
 		BookRate <input type="text" name="bookrate"><br>
-		BookSale <input type="number" name="booksale" value=1><br>
+		
 		<input type="submit" value="입력">
+		<button type="submit">Add</button>
 		<input type="reset" value="초기화">	
 	</form>
 	

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Login Page</h1>
-	<form action="../" method="post">
+	<form action="login" method="POST">
         <div>
             ID <input type="text" name="id" placeholder="아이디">
             PW <input type="password" name="pw" placeholder="비밀번호"> 

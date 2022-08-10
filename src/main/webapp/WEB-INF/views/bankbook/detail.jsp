@@ -39,10 +39,10 @@
 		<h3>Data가 없다</h3>
 	<%} %>
 	
-	
 	<!-- 상대경로 -->
 	<a href="../member/login">Login</a>
 	<!-- 절대경로 -->
 	<a href="/member/join">Join</a>
+	<a href="./list">리스트보기</a>
 </body>
 </html>

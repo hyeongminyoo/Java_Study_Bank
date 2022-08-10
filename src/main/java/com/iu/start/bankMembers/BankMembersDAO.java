@@ -47,7 +47,7 @@ public class BankMembersDAO implements MembersDAO{
 		Connection con = DBConnector.getConnection();
 		
 		//2. Query문 작성
-		String sql = "SELECT USERNAME FROM BANKMEMBERS "
+		String sql = "SELECT * FROM BANKMEMBERS "
 				+ "WHERE USERNAME LIKE ? "
 				+ "ORDER BY USERNAME ASC";
 		
@@ -67,6 +67,9 @@ public class BankMembersDAO implements MembersDAO{
 		while(rs.next()) {
 			BankMembersDTO bankMembersDTO = new BankMembersDTO();
 			bankMembersDTO.setUsername(rs.getString("USERNAME"));
+			bankMembersDTO.setName(rs.getString("NAME"));
+			bankMembersDTO.setEmail(rs.getString("EMAIL"));
+			bankMembersDTO.setPhone(rs.getString("PHONE"));
 			ar.add(bankMembersDTO);
 		}
 		

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 import com.iu.start.util.DBConnector;
 
@@ -15,6 +16,7 @@ public class BankBookDAO implements BookDAO {
 	//BOOKSALE은 처음엔 무조건 1로 입력
 	public int setBankBook(BankBookDTO bankBookDTO) throws Exception {
 		
+		GregorianCalendar ca = new GregorianCalendar();
 		//1. DB 연결
 		Connection con = DBConnector.getConnection();
 		//2. Query문 작성
@@ -22,10 +24,10 @@ public class BankBookDAO implements BookDAO {
 		//3. 미리 전송
 		PreparedStatement st = con.prepareStatement(sql);
 		//?값 세팅
-		st.setLong(1, bankBookDTO.getBooknum());
+		st.setLong(1, ca.getTimeInMillis());
 		st.setString(2, bankBookDTO.getBookname());
 		st.setDouble(3, bankBookDTO.getBookrate());
-		st.setInt(4, bankBookDTO.getBooksale());
+		st.setInt(4, 1);
 		
 		//5. 최종 전송 후 결과처리
 		int result = st.executeUpdate();

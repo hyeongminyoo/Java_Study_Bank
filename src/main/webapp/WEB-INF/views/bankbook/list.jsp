@@ -29,7 +29,7 @@
 		<tbody>
 			<% for(BankBookDTO bankBookDTO:ar){ %>
 			 <tr>
-			 	<td><a href="./detail?bookNum=<%= bankBookDTO.getBooknum()%>"><%= bankBookDTO.getBookname() %></a></td>
+			 	<td><a href="./detail?booknum=<%= bankBookDTO.getBooknum()%>"><%= bankBookDTO.getBookname() %></a></td>
 			 	<td><%= bankBookDTO.getBookrate() %></td>
 			 </tr>
 			<% }%>
@@ -40,7 +40,7 @@
 		<h3>data가 없음</h3>
 	<%} %>
 	
-	<a href="detail">Detail</a>
+	<a href="./add">상품등록</a>
 	
 </body>
 </html>
