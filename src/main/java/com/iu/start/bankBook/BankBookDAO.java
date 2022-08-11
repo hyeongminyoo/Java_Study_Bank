@@ -4,11 +4,53 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import com.iu.start.util.DBConnector;
 
 public class BankBookDAO implements BookDAO {
+
+	
+	@Override
+	public int setDelete(BankBookDTO bankBookDTO) throws Exception {
+		
+		Connection con = DBConnector.getConnection();
+		
+		String sql = "DELETE BANKBOOK WHERE BOOKNUM = ?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setLong(1, bankBookDTO.getBooknum());
+		
+		int result = st.executeUpdate();
+		
+		DBConnector.disConnect(st, con);
+		
+		return result;
+	}
+
+	@Override
+	public int setUpdate(BankBookDTO bankBookDTO) throws Exception {
+		
+		Connection con = DBConnector.getConnection();
+		
+		String sql = "UPDATE BANKBOOK "
+				+ "SET BOOKNAME = ?, BOOKRATE = ? "
+				+ "WHERE BOOKNUM = ?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, bankBookDTO.getBookname());
+		st.setDouble(2, bankBookDTO.getBookrate());
+		st.setLong(3, bankBookDTO.getBooknum());
+		
+		int result = st.executeUpdate();
+		
+		DBConnector.disConnect(st, con);
+		
+		return result;
+	}
 
 	@Override
 	//BANKBOOK 테이블에 인서트 
@@ -16,7 +58,7 @@ public class BankBookDAO implements BookDAO {
 	//BOOKSALE은 처음엔 무조건 1로 입력
 	public int setBankBook(BankBookDTO bankBookDTO) throws Exception {
 		
-		GregorianCalendar ca = new GregorianCalendar();
+		Calendar ca = Calendar.getInstance();
 		//1. DB 연결
 		Connection con = DBConnector.getConnection();
 		//2. Query문 작성

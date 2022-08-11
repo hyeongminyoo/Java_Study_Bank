@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 public interface BookDAO {
 	
+	
+	public int setDelete(BankBookDTO bankBookDTO) throws Exception;
+	
+	
+	public int setUpdate(BankBookDTO bankBookDTO) throws Exception;
+	
 	//BANKBOOK 테이블에 인서트 
 	//BOOKNUM은 현재 시간을 밀리세컨즈로 변환하여 입력
 	//BOOKSALE은 처음엔 무조건 1로 입력

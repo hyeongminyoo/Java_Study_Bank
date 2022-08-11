@@ -1,12 +1,7 @@
-<%@page import="com.iu.start.bankBook.BankBookDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <% 
- 	//스크립틀릿<% java 코드 작성% >
- 	//표현식   <% = 자바 변수 또는 값 % >
- 	ArrayList<BankBookDTO> ar = (ArrayList<BankBookDTO>)request.getAttribute("list");
- %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +14,7 @@
 		
 	<!--  /bankbook/detail  jsp: detail.jsp -->
 	<!--  link 주소는 상대경로로 작성 -->
-	<%if(ar != null){ %>
+	
 	<table border="1">
 		<thead>
 			<tr>
@@ -27,18 +22,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(BankBookDTO bankBookDTO:ar){ %>
+			<c:forEach items="${requestScope.list}" var="dto">
 			 <tr>
-			 	<td><a href="./detail?booknum=<%= bankBookDTO.getBooknum()%>"><%= bankBookDTO.getBookname() %></a></td>
-			 	<td><%= bankBookDTO.getBookrate() %></td>
+			 	<td><a href="./detail?booknum=${pageScope.dto.booknum}">${pageScope.dto.bookname}</a></td>
+			 	<td>${pageScope.dto.bookrate}</td>
 			 </tr>
-			<% }%>
+			</c:forEach>
+			
 		</tbody>
 	</table>
 	
-	<%}else { %>
-		<h3>data가 없음</h3>
-	<%} %>
 	
 	<a href="./add">상품등록</a>
 	

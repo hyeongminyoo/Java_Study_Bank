@@ -23,13 +23,19 @@ public class BankMembersTest {
 //			int result = bankMembersDAO.setJoin(bankMembersDTO);
 //			System.out.println(result);
 			
-			System.out.println("검색할 id 입력");
-			String search = sc.next();
-			ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(search);
-			System.out.println(ar.size()>0);
-			for(BankMembersDTO bmDTO : ar) {
-				System.out.println(bmDTO.getUsername());
-			}
+//			System.out.println("검색할 id 입력");
+//			String search = sc.next();
+//			ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(search);
+//			System.out.println(ar.size()>0);
+//			for(BankMembersDTO bmDTO : ar) {
+//				System.out.println(bmDTO.getUsername());
+//			}
+			BankMembersDTO bankMembersDTO = new BankMembersDTO();
+			bankMembersDTO.setUsername("id7");
+			bankMembersDTO.setPassword("pw7");
+			bankMembersDTO = bankMembersDAO.getLogin(bankMembersDTO);
+			System.out.println(bankMembersDTO.getUsername());
+			System.out.println(bankMembersDTO.getName());
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

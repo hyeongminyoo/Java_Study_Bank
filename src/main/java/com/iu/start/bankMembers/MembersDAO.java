@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public interface MembersDAO {
 	
+	public BankMembersDTO getLogin(BankMembersDTO bankMembersDTO) throws Exception;
+	
 	//bankMembers 회원가입 (Insert) (아이디, 패스워드, 이름, 이메일, 전화번호) (1이면성공, 0(Exception)이면 실패)
 	public int setJoin(BankMembersDTO bankMembersDTO) throws Exception;
 	
