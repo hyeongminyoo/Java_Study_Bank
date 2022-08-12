@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h1>Login Page</h1>
-	<form action="login" method="POST">
+	<form action="login.iu" method="POST">
         <div>
-            ID <input type="text" name="username" placeholder="아이디">
-            PW <input type="password" name="password" placeholder="비밀번호"> 
+            ID <input type="text" value="id7" name="userName" placeholder="아이디">
+            PW <input type="password" value="pw7" name="password" placeholder="비밀번호"> 
             <input type="submit" value="로그인">
             <div>
                 아이디 저장 <input type="checkbox" name="c1" value="아이디 저장">

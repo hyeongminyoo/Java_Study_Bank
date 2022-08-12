@@ -13,18 +13,19 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 
-<c:if test="${empty requestScope.member}">
-<a href="./member/login">로그인</a>
-<a href="./member/join">가입</a>
+<c:if test="${empty sessionScope.member}">
+<a href="./member/login.iu">로그인</a>
+<a href="./member/join.iu">가입</a>
 </c:if>
 
-<c:if test="${not empty requestScope.member}">
-<a href="#">로그아웃</a>
+<c:if test="${not empty sessionScope.member}">
+<h3>${sessionScope.member.name}님 환영합니다.</h3>
+<a href="./member/logout.iu">로그아웃</a>
 <a href="#">마이 페이지</a>
 </c:if>
 
-<a href="./bankbook/list">상품리스트</a>
-<a href="./member/search">회원검색</a>
+<a href="./bankbook/list.iu">상품리스트</a>
+<a href="./member/search.iu">회원검색</a>
 
 
 </body>

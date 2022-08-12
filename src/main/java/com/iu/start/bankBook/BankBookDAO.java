@@ -21,7 +21,7 @@ public class BankBookDAO implements BookDAO {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setLong(1, bankBookDTO.getBooknum());
+		st.setLong(1, bankBookDTO.getBookNum());
 		
 		int result = st.executeUpdate();
 		
@@ -41,9 +41,9 @@ public class BankBookDAO implements BookDAO {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setString(1, bankBookDTO.getBookname());
-		st.setDouble(2, bankBookDTO.getBookrate());
-		st.setLong(3, bankBookDTO.getBooknum());
+		st.setString(1, bankBookDTO.getBookName());
+		st.setDouble(2, bankBookDTO.getBookRate());
+		st.setLong(3, bankBookDTO.getBookNum());
 		
 		int result = st.executeUpdate();
 		
@@ -67,8 +67,8 @@ public class BankBookDAO implements BookDAO {
 		PreparedStatement st = con.prepareStatement(sql);
 		//?값 세팅
 		st.setLong(1, ca.getTimeInMillis());
-		st.setString(2, bankBookDTO.getBookname());
-		st.setDouble(3, bankBookDTO.getBookrate());
+		st.setString(2, bankBookDTO.getBookName());
+		st.setDouble(3, bankBookDTO.getBookRate());
 		st.setInt(4, 1);
 		
 		//5. 최종 전송 후 결과처리
@@ -96,10 +96,10 @@ public class BankBookDAO implements BookDAO {
 		
 		while(rs.next()) {
 			BankBookDTO bankBookDTO = new BankBookDTO();
-			bankBookDTO.setBooknum(rs.getLong("BOOKNUM"));
-			bankBookDTO.setBookname(rs.getString("BOOKNAME"));
-			bankBookDTO.setBookrate(rs.getDouble("BOOKRATE"));
-			bankBookDTO.setBooksale(rs.getInt("BOOKSALE"));
+			bankBookDTO.setBookNum(rs.getLong("BOOKNUM"));
+			bankBookDTO.setBookName(rs.getString("BOOKNAME"));
+			bankBookDTO.setBookRate(rs.getDouble("BOOKRATE"));
+			bankBookDTO.setBookSale(rs.getInt("BOOKSALE"));
 			ar.add(bankBookDTO);
 		}
 		
@@ -118,8 +118,8 @@ public class BankBookDAO implements BookDAO {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setInt(1, bankBookDTO.getBooksale());
-		st.setLong(2, bankBookDTO.getBooknum());
+		st.setInt(1, bankBookDTO.getBookSale());
+		st.setLong(2, bankBookDTO.getBookNum());
 		
 		int result = st.executeUpdate();
 		
@@ -140,16 +140,16 @@ public class BankBookDAO implements BookDAO {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setLong(1, bankBookDTO.getBooknum());
+		st.setLong(1, bankBookDTO.getBookNum());
 		
 		ResultSet rs = st.executeQuery();
 		
 		if(rs.next()) {
 			bankBookDTO2 = new BankBookDTO();
-			bankBookDTO2.setBooknum(rs.getLong("BOOKNUM"));
-			bankBookDTO2.setBookname(rs.getString("BOOKNAME"));
-			bankBookDTO2.setBookrate(rs.getDouble("BOOKRATE"));
-			bankBookDTO2.setBooksale(rs.getInt("BOOKSALE"));
+			bankBookDTO2.setBookNum(rs.getLong("BOOKNUM"));
+			bankBookDTO2.setBookName(rs.getString("BOOKNAME"));
+			bankBookDTO2.setBookRate(rs.getDouble("BOOKRATE"));
+			bankBookDTO2.setBookSale(rs.getInt("BOOKSALE"));
 		}
 		
 		DBConnector.disConnect(rs, st, con);

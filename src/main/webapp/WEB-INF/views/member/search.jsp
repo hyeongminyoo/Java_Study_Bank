@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h3>Search Page</h3>
-	<form action = "search" method="POST">
+	<form action = "search.iu" method="POST">
 		<div>
-		ID : <input type="text" name = "username">
+		ID : <input type="text" name = "userName">
 		</div>
 		<button type ="submit">search</button>
 	</form>

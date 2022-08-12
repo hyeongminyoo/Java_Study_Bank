@@ -17,14 +17,14 @@ public class BankMembersDAO implements MembersDAO{
 		String sql = "SELECT USERNAME,NAME FROM BANKMEMBERS WHERE USERNAME = ? and PASSWORD = ?";
 		PreparedStatement st = con.prepareStatement(sql);
 		
-		st.setString(1, bankMembersDTO.getUsername());
+		st.setString(1, bankMembersDTO.getUserName());
 		st.setString(2, bankMembersDTO.getPassword());
 		
 		ResultSet rs = st.executeQuery();
 		
 		if(rs.next()) {
 			bankMembersDTO = new BankMembersDTO();
-			bankMembersDTO.setUsername(rs.getString("USERNAME"));
+			bankMembersDTO.setUserName(rs.getString("USERNAME"));
 			bankMembersDTO.setName(rs.getString("NAME"));
 		}else {
 			bankMembersDTO = null;
@@ -47,7 +47,7 @@ public class BankMembersDAO implements MembersDAO{
 		PreparedStatement st = con.prepareStatement(sql);
 
 		//4. ?값 세팅
-		st.setString(1, bankMembersDTO.getUsername());
+		st.setString(1, bankMembersDTO.getUserName());
 		st.setString(2, bankMembersDTO.getPassword());
 		st.setString(3, bankMembersDTO.getName());
 		st.setString(4, bankMembersDTO.getEmail());
@@ -90,7 +90,7 @@ public class BankMembersDAO implements MembersDAO{
 		
 		while(rs.next()) {
 			BankMembersDTO bankMembersDTO = new BankMembersDTO();
-			bankMembersDTO.setUsername(rs.getString("USERNAME"));
+			bankMembersDTO.setUserName(rs.getString("USERNAME"));
 			bankMembersDTO.setName(rs.getString("NAME"));
 			bankMembersDTO.setEmail(rs.getString("EMAIL"));
 			bankMembersDTO.setPhone(rs.getString("PHONE"));

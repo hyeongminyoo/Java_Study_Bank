@@ -31,10 +31,10 @@ public class BankMembersTest {
 //				System.out.println(bmDTO.getUsername());
 //			}
 			BankMembersDTO bankMembersDTO = new BankMembersDTO();
-			bankMembersDTO.setUsername("id7");
+			bankMembersDTO.setUserName("id7");
 			bankMembersDTO.setPassword("pw7");
 			bankMembersDTO = bankMembersDAO.getLogin(bankMembersDTO);
-			System.out.println(bankMembersDTO.getUsername());
+			System.out.println(bankMembersDTO.getUserName());
 			System.out.println(bankMembersDTO.getName());
 			
 		} catch (Exception e) {

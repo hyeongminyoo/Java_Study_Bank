@@ -3,44 +3,47 @@ package com.iu.start.bankBook;
 
 public class BankBookDTO {
 
-	private Long booknum;
-	private String bookname;
-	private Double bookrate;
-	private Integer booksale;
+	private Long bookNum;
+	private String bookName;
+	private Double bookRate;
+	private Integer bookSale;
 	
 	public BankBookDTO() {
 		
 	}
+
+	public Long getBookNum() {
+		return bookNum;
+	}
+
+	public void setBookNum(Long bookNum) {
+		this.bookNum = bookNum;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public Double getBookRate() {
+		return bookRate;
+	}
+
+	public void setBookRate(Double bookRate) {
+		this.bookRate = bookRate;
+	}
+
+	public Integer getBookSale() {
+		return bookSale;
+	}
+
+	public void setBookSale(Integer bookSale) {
+		this.bookSale = bookSale;
+	}
 	
 
-	public Long getBooknum() {
-		return booknum;
-	}
-
-
-
-	public void setBooknum(Long booknum) {
-		this.booknum = booknum;
-	}
-
-
-
-	public String getBookname() {
-		return bookname;
-	}
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
-	}
-	public Double getBookrate() {
-		return bookrate;
-	}
-	public void setBookrate(Double bookrate) {
-		this.bookrate = bookrate;
-	}
-	public Integer getBooksale() {
-		return booksale;
-	}
-	public void setBooksale(Integer booksale) {
-		this.booksale = booksale;
-	}
+	
 }

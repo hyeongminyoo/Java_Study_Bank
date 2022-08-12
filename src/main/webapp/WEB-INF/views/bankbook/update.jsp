@@ -8,18 +8,18 @@
 </head>
 <body>
 	<h3>BankBookUpdate Page</h3>
-	<form action="update" method = "POST">
+	<form action="update.iu" method = "POST">
 	<div>
-		<input type="hidden" name = "booknum" readonly value="${update.booknum}">
+		<input type="hidden" name = "bookNum" readonly value="${update.bookNum}">
 	</div>
 	<div>
-		Name : <input type="text" name="bookname" value="${update.bookname}" >
+		Name : <input type="text" name="bookName" value="${update.bookName}" >
 	</div>
 	<div>
-		Rate : <input type="text" name="bookrate" value="${update.bookrate}">
+		Rate : <input type="text" name="bookRate" value="${update.bookRate}">
 	</div>
 	<div>
-		<input type="hidden" name="booksale" readonly value="${update.booksale}" >
+		<input type="hidden" name="bookSale" readonly value="${update.bookSale}" >
 	</div>
 		<button type="submit">수정</button>
 		<input type="submit" value="수정">

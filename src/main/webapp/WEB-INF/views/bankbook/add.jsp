@@ -10,10 +10,10 @@
 </head>
 <body>
 	<h3>Add page</h3>
-	<form action="add" method="POST">
+	<form action="add.iu" method="POST">
 		
-		BookName <input type="text" name="bookname"><br>
-		BookRate <input type="text" name="bookrate"><br>
+		BookName <input type="text" name="bookName"><br>
+		BookRate <input type="text" name="bookRate"><br>
 		
 		<input type="submit" value="입력">
 		<button type="submit">Add</button>

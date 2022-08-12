@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BankBookController {
 	
 	
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "list.iu", method = RequestMethod.GET)
 	public String list(Model model) throws Exception {
 		//ModelAndView mv = new ModelAndView();
 		System.out.println("list 실행");
@@ -23,11 +23,11 @@ public class BankBookController {
 		return "bankbook/list";
 	}
 	
-	@RequestMapping(value = "detail", method = RequestMethod.GET)
+	@RequestMapping(value = "detail.iu", method = RequestMethod.GET)
 	public ModelAndView detail(BankBookDTO bankBookDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("detail");
-		System.out.println("booknum:"+ bankBookDTO.getBooknum());
+		System.out.println("bookNum:"+ bankBookDTO.getBookNum());
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		bankBookDTO = bankBookDAO.getDetail(bankBookDTO);
 		//return "bankbook/detail";
@@ -38,13 +38,13 @@ public class BankBookController {
 	}
 	
 	// /WEB-INF/views/bankbook/add.jsp
-	@RequestMapping(value = "add", method = RequestMethod.GET)
+	@RequestMapping(value = "add.iu", method = RequestMethod.GET)
 	public void add() throws Exception {
 		System.out.println("add get 실행");
 		//return "bankbook/add";
 	}
 	
-	@RequestMapping(value = "add", method = RequestMethod.POST)
+	@RequestMapping(value = "add.iu", method = RequestMethod.POST)
 	public ModelAndView add(BankBookDTO bankBookDTO,ModelAndView mv) throws Exception {
 		System.out.println("Add post 실행");
 		BankBookDAO bankBookDAO = new BankBookDAO();
@@ -52,41 +52,41 @@ public class BankBookController {
 		int result = bankBookDAO.setBankBook(bankBookDTO);
 		System.out.println(result==1);
 		
-		mv.setViewName("redirect:./list");
+		mv.setViewName("redirect:./list.iu");
 		//등록 후 list 페이지로 이동
 		return mv;
 	}
 	
-	@RequestMapping(value = "update", method = RequestMethod.GET)
+	@RequestMapping(value = "update.iu", method = RequestMethod.GET)
 	public void update(BankBookDTO bankBookDTO,Model model) throws Exception {
 		System.out.println("Update 폼");
 		BankBookDAO bankBookDAO = new BankBookDAO();
-		System.out.println("번호:"+bankBookDTO.getBooknum());
+		System.out.println("번호:"+bankBookDTO.getBookNum());
 		bankBookDTO = bankBookDAO.getDetail(bankBookDTO);
 		model.addAttribute("update", bankBookDTO);
 
 	}
 	
-	@RequestMapping(value = "update" , method = RequestMethod.POST)
+	@RequestMapping(value = "update.iu" , method = RequestMethod.POST)
 	public ModelAndView update(BankBookDTO bankBookDTO, ModelAndView mv) throws Exception {
 		System.out.println("Update 전송");
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		int result = bankBookDAO.setUpdate(bankBookDTO);
 		System.out.println(result==1);
 
-		mv.setViewName("redirect:./detail?booknum="+bankBookDTO.getBooknum());
+		mv.setViewName("redirect:./detail.iu?booknum="+bankBookDTO.getBookNum());
 		
 		return mv;
 	}
 	
-	@RequestMapping(value="delete", method = RequestMethod.GET)
+	@RequestMapping(value="delete.iu", method = RequestMethod.GET)
 	public String delete(BankBookDTO bankBookDTO) throws Exception {
 		System.out.println("삭제");
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		int result = bankBookDAO.setDelete(bankBookDTO);
 		System.out.println(result==1);
 		
-		return "redirect:./list";
+		return "redirect:./list.iu";
 		
 	}
 	

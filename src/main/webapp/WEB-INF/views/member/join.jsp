@@ -9,9 +9,9 @@
 </head>
 <body>
 	<h1>Join Page</h1>
-	<form action="join" method="POST">
+	<form action="join.iu" method="POST">
 	    <div>
-		    ID <input type = "text" name ="username" placeholder = "ID입력"><br>
+		    ID <input type = "text" name ="userName" placeholder = "ID입력"><br>
 		    PW <input type ="password" name ="password" placeholder = "PW입력"><br>
 		    NAME <input type="text" name="name"  placeholder ="이름입력"><br>
 		    EMAIL <input type="text" name="email"   placeholder ="E-mail 입력">

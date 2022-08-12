@@ -33,16 +33,16 @@ public class BankBookTest {
 			System.out.println("booksale 수정할 일련번호 입력");
 			long select = sc.nextLong();
 			for(BankBookDTO bDTO:ar) {
-				if(select == bDTO.getBooknum()) {
-					bankBookDTO.setBooknum(select);
+				if(select == bDTO.getBookNum()) {
+					bankBookDTO.setBookNum(select);
 				}
 			}
 			
 			
-			if(bankBookDTO.getBooknum() != null) {
+			if(bankBookDTO.getBookNum() != null) {
 				System.out.println("1 or 0");
 				int num = sc.nextInt();
-				bankBookDTO.setBooksale(num);
+				bankBookDTO.setBookSale(num);
 				int result = bankBookDAO.setChangeSale(bankBookDTO);
 				System.out.println(result);
 			}else {
